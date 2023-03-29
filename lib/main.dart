@@ -1,3 +1,4 @@
+import 'package:flashcards/Signup.dart';
 import 'package:flashcards/landing_page.dart';
 import 'package:flutter/material.dart';
 
