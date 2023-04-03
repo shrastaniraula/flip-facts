@@ -9,11 +9,11 @@ class Welcome extends StatelessWidget {
     return Scaffold(
         body: Container(
       child: Container(
-        constraints: BoxConstraints.expand(),
-        decoration: BoxDecoration(
+        constraints: const BoxConstraints.expand(),
+        decoration: const BoxDecoration(
             image: DecorationImage(
                 fit: BoxFit.cover,
-                image: AssetImage("assests/backgroundLanding.png"))),
+                image: AssetImage("assets/backgroundLanding.png"))),
         child: SafeArea(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

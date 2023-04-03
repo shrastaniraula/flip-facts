@@ -1,4 +1,5 @@
 import 'package:flashcards/Signup.dart';
+import 'package:flashcards/cards.dart';
 import 'package:flashcards/landing_page.dart';
 import 'package:flashcards/login.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Login(),
+      home: Cards(),
     );
   }
 }
