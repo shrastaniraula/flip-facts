@@ -32,7 +32,7 @@ class _LoginState extends State<Login> {
                 ),
             Container(
               margin: EdgeInsetsDirectional.only(top: 300),
-              // margin: EdgeI/nsets.only(top: 400),
+              // margin: EdgeInsets.only(top: 400),
               height: 500,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(

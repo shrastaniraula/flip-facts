@@ -8,11 +8,49 @@ class FlashcardView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20.0),
+      ),
       elevation: 4,
-      child: Center(
-        child: Text(
-          text!,
-          textAlign: TextAlign.center,
+      child: Container(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.all(Radius.circular(20)),
+            color: Color.fromARGB(255, 228, 218, 254)),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(2.0),
+              child: SingleChildScrollView(
+                child: Text(
+                  text!,
+                  style: TextStyle(fontSize: 21),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(6.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Date",
+                    style: TextStyle(fontSize: 20, color: Colors.grey),
+                  ),
+                  IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.edit,
+                        color: Colors.grey,
+                      )),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );
