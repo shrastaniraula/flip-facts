@@ -2,11 +2,20 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import "package:flutter/material.dart";
 
-class Signup extends StatelessWidget {
+class Signup extends StatefulWidget {
   Signup({super.key});
+
+  @override
+  State<Signup> createState() => _SignupState();
+}
+
+class _SignupState extends State<Signup> {
   TextEditingController nameController = TextEditingController();
+
   TextEditingController emailController = TextEditingController();
+
   TextEditingController passwordController = TextEditingController();
+
   TextEditingController confirmPasswordController = TextEditingController();
 
   @override
@@ -17,7 +26,7 @@ class Signup extends StatelessWidget {
         child: Container(
           child: SafeArea(
             child: Column(children: [
-              Text("SIGN UP",
+            const Text("SIGN UP",
                   textAlign: TextAlign.left,
                   style: TextStyle(
                       fontSize: 60,
@@ -31,18 +40,18 @@ class Signup extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Padding(
+                  const  Padding(
                       padding: EdgeInsets.all(10),
                       child: Text(
                         'Name',
-                        style: TextStyle(
+                        style:  TextStyle(
                             fontSize: 16.0, fontWeight: FontWeight.bold),
                       ),
                     ),
                     SizedBox(height: 8.0),
                     TextField(
                       controller: nameController,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         filled: true,
                         fillColor: Color.fromARGB(255, 220, 207, 254),
                         border: OutlineInputBorder(
@@ -52,7 +61,7 @@ class Signup extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 16.0),
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.all(10),
                       child: Text(
                         'Email',
@@ -94,8 +103,8 @@ class Signup extends StatelessWidget {
                         hintText: 'Enter your password',
                       ),
                     ),
-                    SizedBox(height: 16.0),
-                    Padding(
+                  const  SizedBox(height: 16.0),
+                    const Padding(
                       padding: EdgeInsets.all(10),
                       child: Text(
                         'Confirm Password',
@@ -135,7 +144,7 @@ class Signup extends StatelessWidget {
                     borderRadius: BorderRadius.circular(50),
                     color: Color.fromARGB(255, 79, 49, 162),
                   ),
-                  child: Center(
+                  child: const Center(
                       child: Text('Sign Up',
                           style: TextStyle(
                               fontSize: 20,
