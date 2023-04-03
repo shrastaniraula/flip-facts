@@ -1,5 +1,6 @@
 import 'package:flashcards/Signup.dart';
 import 'package:flashcards/cards.dart';
+import 'package:flashcards/category.dart';
 import 'package:flashcards/landing_page.dart';
 import 'package:flashcards/login.dart';
 import 'package:flutter/material.dart';
@@ -17,9 +18,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        // primarySwatch: Colors.blue,
-      ),
-      home: Cards(),
+          // primarySwatch: Colors.blue,
+          ),
+      home: Category(),
     );
   }
 }

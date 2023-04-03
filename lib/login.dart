@@ -21,7 +21,6 @@ class _LoginState extends State<Login> {
           alignment: AlignmentDirectional.topCenter,
           children: [
             Container(
-                // height: 400,
                 constraints: BoxConstraints.loose(Size.fromHeight(500.0)),
                 decoration: BoxDecoration(
                     image: DecorationImage(
