@@ -1,23 +1,14 @@
-// import 'package:flutter/material.dart';
-// import 'package:flutter/src/widgets/framework.dart';
-// import 'package:flutter/src/widgets/placeholder.dart';
-
-// class Login extends StatelessWidget {
-//   const Login({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       backgroundColor: Color.fromARGB(255, 228, 218, 254),
-//     );
-//   }
-// }
-
 import 'package:flutter/material.dart';
 // import 'package:sendimage/createnews.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
   Login({super.key});
+
+  @override
+  State<Login> createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
   TextEditingController userNameController = TextEditingController();
 
   TextEditingController passwordController = TextEditingController();
