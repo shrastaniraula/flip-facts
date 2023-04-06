@@ -3,7 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
 class Category extends StatelessWidget {
-  const Category({super.key});
+  Category({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,14 +16,6 @@ class Category extends StatelessWidget {
           "Welcome back",
           style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
         ),
-        // actions: [
-        //   IconButton(
-        //       onPressed: () {
-        //         Navigator.pushReplacementNamed(context, '/');
-        //         print("Icon Pressed");
-        //       },
-        //       icon: const Icon(Icons.logout))
-        // ],
       ),
       drawer: Drawer(
         child: ListView(children: [
@@ -38,21 +30,21 @@ class Category extends StatelessWidget {
             leading: const Icon(Icons.library_books),
             title: const Text('List Of Cards'),
             onTap: () {
-              // Navigator.pop(context);
+              Navigator.pushReplacementNamed(context, '/category');
             },
           ),
           ListTile(
             leading: const Icon(Icons.library_add),
             title: const Text('Add Cards'),
             onTap: () {
-              // Navigator.pop(context);
+              Navigator.pushReplacementNamed(context, '/addCards');
             },
           ),
           ListTile(
             leading: const Icon(Icons.logout),
             title: const Text('LogOut'),
             onTap: () {
-              // Navigator.pop(context);
+              Navigator.pop(context);
             },
           ),
         ]),
@@ -63,6 +55,9 @@ class Category extends StatelessWidget {
             height: 50,
           ),
           GestureDetector(
+            onTap: () {
+              Navigator.pushReplacementNamed(context, '/cards');
+            },
             child: Container(
               height: 80,
               width: 360,
@@ -97,6 +92,9 @@ class Category extends StatelessWidget {
             ),
           ),
           GestureDetector(
+            onTap: () {
+              Navigator.pushReplacementNamed(context, '/cards');
+            },
             child: Container(
               height: 80,
               width: 360,
@@ -131,6 +129,9 @@ class Category extends StatelessWidget {
             ),
           ),
           GestureDetector(
+            onTap: () {
+              Navigator.pushReplacementNamed(context, '/cards');
+            },
             child: Container(
               height: 80,
               width: 360,
@@ -165,6 +166,9 @@ class Category extends StatelessWidget {
             ),
           ),
           GestureDetector(
+            onTap: () {
+              Navigator.pushReplacementNamed(context, '/cards');
+            },
             child: Container(
               height: 80,
               width: 360,
@@ -199,6 +203,9 @@ class Category extends StatelessWidget {
             ),
           ),
           GestureDetector(
+            onTap: () {
+              Navigator.pushReplacementNamed(context, '/cards');
+            },
             child: Container(
               height: 80,
               width: 360,
@@ -233,6 +240,9 @@ class Category extends StatelessWidget {
             ),
           ),
           GestureDetector(
+            onTap: () {
+              Navigator.pushReplacementNamed(context, '/cards');
+            },
             child: Container(
               height: 80,
               width: 360,

@@ -47,20 +47,27 @@ class Welcome extends StatelessWidget {
               ),
               Column(
                 children: [
-                  FrostedGlassBox(
-                      theWidth: 250.0,
-                      theHeight: 50.0,
-                      theChild: Text(
-                        "Login?",
-                        style: TextStyle(
-                            fontSize: 20,
-                            color: Color.fromARGB(246, 255, 255, 255)),
-                      )),
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushReplacementNamed(context, '/login');
+                    },
+                    child: FrostedGlassBox(
+                        theWidth: 250.0,
+                        theHeight: 50.0,
+                        theChild: Text(
+                          "Login?",
+                          style: TextStyle(
+                              fontSize: 20,
+                              color: Color.fromARGB(246, 255, 255, 255)),
+                        )),
+                  ),
                   SizedBox(
                     height: 20,
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushReplacementNamed(context, '/signup');
+                    },
                     child: Container(
                       width: 250,
                       height: 50,

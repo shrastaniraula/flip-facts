@@ -1,3 +1,4 @@
+import 'package:flashcards/custom_drawer.dart';
 import 'package:flashcards/flashcard.dart';
 import 'package:flashcards/flashcard_view.dart';
 import 'package:flip_card/flip_card.dart';
@@ -43,81 +44,63 @@ class _CardsState extends State<Cards> {
           //       icon: const Icon(Icons.logout))
           // ],
         ),
-        drawer: Drawer(
-          child: ListView(children: [
-            ListTile(
-              leading: const Icon(Icons.person),
-              title: const Text('Profile'),
-              onTap: () {
-                // Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.library_books),
-              title: const Text('List Of Cards'),
-              onTap: () {
-                // Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.library_add),
-              title: const Text('Add Cards'),
-              onTap: () {
-                // Navigator.pop(context);
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.logout),
-              title: const Text('LogOut'),
-              onTap: () {
-                // Navigator.pop(context);
-              },
-            ),
-          ]),
-        ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              SizedBox(
-                height: 100,
-              ),
-              Container(
-                height: 400,
-                width: 370,
-                child: FlipCard(
-                    front: FlashcardView(
-                      text: _flashcards[_currentIndex].question,
-                    ),
-                    back: FlashcardView(
-                      text: _flashcards[_currentIndex].answer,
-                    )),
-              ),
-              SizedBox(
-                height: 200,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+        drawer: CustomDrawer(),
+        body: ListView(
+          children: [
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  GestureDetector(
-                    onTap: showPreviousCard,
-                    child: Row(
-                      children: [Icon(Icons.chevron_left), Text('Prev')],
-                    ),
+                  SizedBox(
+                    height: 80,
                   ),
-                  GestureDetector(
-                    onTap: showNextCard,
-                    child: Row(
-                      children: [Text('Next'), Icon(Icons.chevron_right)],
-                    ),
+                  Container(
+                    height: 400,
+                    width: 370,
+                    child: FlipCard(
+                        front: FlashcardView(
+                          text: _flashcards[_currentIndex].question,
+                        ),
+                        back: FlashcardView(
+                          text: _flashcards[_currentIndex].answer,
+                        )),
+                  ),
+                  SizedBox(
+                    height: 100,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      GestureDetector(
+                        onTap: showPreviousCard,
+                        child: Row(
+                          children: [
+                            Icon(Icons.chevron_left),
+                            Text('Prev', style: TextStyle(fontSize: 18))
+                          ],
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: showNextCard,
+                        child: Row(
+                          children: [
+                            Text(
+                              'Next',
+                              style: TextStyle(fontSize: 18),
+                            ),
+                            Icon(Icons.chevron_right)
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    height: 20,
                   )
                 ],
               ),
-              SizedBox(
-                height: 20,
-              )
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

@@ -26,7 +26,7 @@ class _SignupState extends State<Signup> {
         child: Container(
           child: SafeArea(
             child: Column(children: [
-            const Text("SIGN UP",
+              const Text("SIGN UP",
                   textAlign: TextAlign.left,
                   style: TextStyle(
                       fontSize: 60,
@@ -40,11 +40,11 @@ class _SignupState extends State<Signup> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                  const  Padding(
+                    const Padding(
                       padding: EdgeInsets.all(10),
                       child: Text(
                         'Name',
-                        style:  TextStyle(
+                        style: TextStyle(
                             fontSize: 16.0, fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -103,7 +103,7 @@ class _SignupState extends State<Signup> {
                         hintText: 'Enter your password',
                       ),
                     ),
-                  const  SizedBox(height: 16.0),
+                    const SizedBox(height: 16.0),
                     const Padding(
                       padding: EdgeInsets.all(10),
                       child: Text(
@@ -136,6 +136,7 @@ class _SignupState extends State<Signup> {
                   print('Email: ${emailController.text}');
                   print('Password: ${passwordController.text}');
                   print('Confirm Password: ${confirmPasswordController.text}');
+                  Navigator.pushReplacementNamed(context, '/login');
                 },
                 child: Container(
                   width: 250,
@@ -152,7 +153,11 @@ class _SignupState extends State<Signup> {
                 ),
               ),
               SizedBox(height: 10.0),
-              Text("Already have an account? Log in")
+              InkWell(
+                  onTap: () {
+                    Navigator.pushReplacementNamed(context, '/login');
+                  },
+                  child: Text("Already have an account? Log in"))
             ]),
           ),
         ),

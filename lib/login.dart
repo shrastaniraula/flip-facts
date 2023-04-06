@@ -48,9 +48,6 @@ class _LoginState extends State<Login> {
                             color: Color.fromARGB(255, 79, 49, 162),
                             fontWeight: FontWeight.w700)),
                   ),
-                  // SizedBox(
-                  //   height: 20,
-                  // ),
                   Column(
                     children: [
                       Padding(
@@ -111,6 +108,8 @@ class _LoginState extends State<Login> {
                                   // Perform signup logic here
                                   print('UserName: ${userNameController.text}');
                                   print('Password: ${passwordController.text}');
+                                  Navigator.pushReplacementNamed(
+                                      context, '/category');
                                 },
                                 child: Container(
                                   width: 250,
@@ -120,7 +119,7 @@ class _LoginState extends State<Login> {
                                     color: Color.fromARGB(255, 79, 49, 162),
                                   ),
                                   child: const Center(
-                                      child: Text('Sign Up',
+                                      child: Text('Log In',
                                           style: TextStyle(
                                               fontSize: 20,
                                               color: Color.fromARGB(
@@ -129,11 +128,17 @@ class _LoginState extends State<Login> {
                               ),
                             ),
                             SizedBox(height: 15.0),
-                            Center(
-                                child: Text(
-                              "Already have an account? Log in",
-                              style: TextStyle(fontSize: 16),
-                            ))
+                            InkWell(
+                              onTap: () {
+                                Navigator.pushReplacementNamed(
+                                    context, '/signup');
+                              },
+                              child: Center(
+                                  child: Text(
+                                "Dont have an account? Sign up",
+                                style: TextStyle(fontSize: 16),
+                              )),
+                            )
                           ],
                         ),
                       ),
