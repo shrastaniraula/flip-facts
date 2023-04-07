@@ -1,10 +1,18 @@
+import 'package:flashcards/custom_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
-class Category extends StatelessWidget {
+
+
+class Category extends StatefulWidget {
   Category({super.key});
 
+  @override
+  State<Category> createState() => _CategoryState();
+}
+
+class _CategoryState extends State<Category> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,38 +25,7 @@ class Category extends StatelessWidget {
           style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
         ),
       ),
-      drawer: Drawer(
-        child: ListView(children: [
-          ListTile(
-            leading: const Icon(Icons.person),
-            title: const Text('Profile'),
-            onTap: () {
-              // Navigator.pop(context);
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.library_books),
-            title: const Text('List Of Cards'),
-            onTap: () {
-              Navigator.pushReplacementNamed(context, '/category');
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.library_add),
-            title: const Text('Add Cards'),
-            onTap: () {
-              Navigator.pushReplacementNamed(context, '/addCards');
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.logout),
-            title: const Text('LogOut'),
-            onTap: () {
-              Navigator.pop(context);
-            },
-          ),
-        ]),
-      ),
+      drawer: CustomDrawer(),
       body: ListView(
         children: [
           SizedBox(

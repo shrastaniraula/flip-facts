@@ -1,3 +1,4 @@
+import 'package:flashcards/category.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flashcards/flashcard.dart';
@@ -5,9 +6,9 @@ import 'package:flashcards/flashcard_view.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 
-class CustomDrawer extends StatelessWidget {
-  CustomDrawer({super.key});
+import 'add_card.dart';
 
+class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -23,14 +24,17 @@ class CustomDrawer extends StatelessWidget {
           leading: Icon(Icons.library_books),
           title: Text('List Of Cards'),
           onTap: () {
-            Navigator.pushReplacementNamed(context, '/category');
+            Navigator.pushReplacement(
+                context, MaterialPageRoute(builder: (context) => Category()));
           },
         ),
         ListTile(
           leading: Icon(Icons.library_add),
           title: Text('Add Cards'),
           onTap: () {
-            Navigator.pushReplacementNamed(context, '/addCards');
+            // Navigator.pushReplacementNamed(context, '/addCards');
+            Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (context) => AddFlashcardPage()));
           },
         ),
         ListTile(

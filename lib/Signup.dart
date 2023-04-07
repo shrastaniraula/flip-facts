@@ -31,97 +31,65 @@ class _SignupState extends State<Signup> {
                   style: TextStyle(
                       fontSize: 60,
                       color: Color.fromARGB(255, 79, 49, 162),
-                      fontWeight: FontWeight.w500)),
+                      fontWeight: FontWeight.w700)),
               SizedBox(
                 height: 20,
               ),
               Padding(
-                padding: EdgeInsets.all(16.0),
+                padding: EdgeInsets.all(22.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Padding(
-                      padding: EdgeInsets.all(10),
-                      child: Text(
-                        'Name',
-                        style: TextStyle(
-                            fontSize: 16.0, fontWeight: FontWeight.bold),
-                      ),
+                    Text(
+                      'Name',
+                      style: TextStyle(
+                          fontSize: 16.0, fontWeight: FontWeight.bold),
                     ),
                     SizedBox(height: 8.0),
                     TextField(
                       controller: nameController,
                       decoration: const InputDecoration(
-                        filled: true,
-                        fillColor: Color.fromARGB(255, 220, 207, 254),
-                        border: OutlineInputBorder(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(30))),
                         hintText: 'Enter your name',
                       ),
                     ),
-                    SizedBox(height: 16.0),
-                    const Padding(
-                      padding: EdgeInsets.all(10),
-                      child: Text(
-                        'Email',
-                        style: TextStyle(
-                            fontSize: 16.0, fontWeight: FontWeight.bold),
-                      ),
+                    SizedBox(height: 25.0),
+                    Text(
+                      'Email',
+                      style: TextStyle(
+                          fontSize: 16.0, fontWeight: FontWeight.bold),
                     ),
                     SizedBox(height: 8.0),
                     TextField(
                       controller: emailController,
                       decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Color.fromARGB(255, 220, 207, 254),
-                        border: OutlineInputBorder(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(30))),
                         hintText: 'Enter your email',
                       ),
                     ),
-                    SizedBox(height: 16.0),
-                    Padding(
-                      padding: EdgeInsets.all(10),
-                      child: Text(
-                        'Password',
-                        style: TextStyle(
-                            fontSize: 16.0, fontWeight: FontWeight.bold),
-                      ),
+                    SizedBox(height: 25.0),
+                    Text(
+                      'Password',
+                      style: TextStyle(
+                          fontSize: 16.0, fontWeight: FontWeight.bold),
                     ),
                     SizedBox(height: 8.0),
                     TextField(
                       controller: passwordController,
                       obscureText: true,
                       decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Color.fromARGB(255, 220, 207, 254),
-                        border: OutlineInputBorder(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(30))),
                         hintText: 'Enter your password',
                       ),
                     ),
-                    const SizedBox(height: 16.0),
-                    const Padding(
-                      padding: EdgeInsets.all(10),
-                      child: Text(
-                        'Confirm Password',
-                        style: TextStyle(
-                            fontSize: 16.0, fontWeight: FontWeight.bold),
-                      ),
+                    SizedBox(height: 25.0),
+                    Text(
+                      'Confirm Password',
+                      style: TextStyle(
+                          fontSize: 16.0, fontWeight: FontWeight.bold),
                     ),
                     SizedBox(height: 8.0),
                     TextField(
                       controller: confirmPasswordController,
                       obscureText: true,
                       decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Color.fromARGB(255, 220, 207, 254),
-                        border: OutlineInputBorder(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(30))),
                         hintText: 'Confirm your password',
                       ),
                     ),

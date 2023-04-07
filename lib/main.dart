@@ -4,7 +4,7 @@ import 'package:flashcards/category.dart';
 import 'package:flashcards/landing_page.dart';
 import 'package:flashcards/login.dart';
 import 'package:flutter/material.dart';
-
+import 'package:google_fonts/google_fonts.dart';
 import 'add_card.dart';
 
 void main() {
@@ -20,14 +20,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
-          primarySwatch: Colors.indigo,
-        ),
+            primarySwatch: Colors.indigo,
+            fontFamily: GoogleFonts.poppins().fontFamily),
         home: Welcome(),
+        // initialRoute: '/category',
         routes: {
           '/signup': (context) => Signup(),
           '/login': (context) => Login(),
-          '/category': (context) => Category(),
           '/cards': (context) => Cards(),
+          '/category': (context) => Category(),
           '/addCards': (context) => AddFlashcardPage(),
         });
   }
