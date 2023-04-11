@@ -1,6 +1,10 @@
+import 'package:flashcards/widgets/textfield.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:velocity_x/velocity_x.dart';
+
+import 'connection/login_signup.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -13,6 +17,21 @@ class _LoginState extends State<Login> {
   TextEditingController userNameController = TextEditingController();
 
   TextEditingController passwordController = TextEditingController();
+
+  validation(String username, String password) {
+    if (username.isEmpty || password.isEmpty) {
+      Fluttertoast.showToast(msg: "Please fill all the fields!");
+      return;
+    }
+    if (password.length <= 8) {
+      Fluttertoast.showToast(
+          msg: "Password should contain atleast 8 characters!");
+    } else {
+      LoginSingup obj = new LoginSingup();
+      obj.login(username, password, context);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +47,7 @@ class _LoginState extends State<Login> {
                       image: DecorationImage(
                           fit: BoxFit.cover,
                           image: AssetImage("assets/LoginIn.png"))),
-                  padding: EdgeInsets.all(200),
+                  padding: EdgeInsets.all(230),
                 )),
             Column(
               children: [
@@ -37,46 +56,30 @@ class _LoginState extends State<Login> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Padding(
-                        padding: EdgeInsets.all(10),
-                        child: Text(
-                          'Username',
-                          style: TextStyle(
-                              fontSize: 16.0, fontWeight: FontWeight.bold),
-                        ),
+                      SizedBox(
+                        height: 30,
                       ),
-                      TextField(
+                      Text(
+                        'Username',
+                        style: TextStyle(
+                            fontSize: 16.0, fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(height: 8.0),
+                      CustomTextField(
                         controller: userNameController,
-                        decoration: const InputDecoration(
-                          filled: true,
-                          fillColor: Color.fromARGB(255, 220, 207, 254),
-                          // border: OutlineInputBorder(
-                          //     borderRadius:
-                          //         BorderRadius.all(Radius.circular(30))),
-                          hintText: 'Enter your username',
-                        ),
+                        hintText: "Enter your password",
                       ),
-                      SizedBox(height: 16.0),
-                      const Padding(
-                        padding: EdgeInsets.all(10),
-                        child: Text(
-                          'Password',
-                          style: TextStyle(
-                              fontSize: 16.0, fontWeight: FontWeight.bold),
-                        ),
+                      SizedBox(height: 20.0),
+                      Text(
+                        'Password',
+                        style: TextStyle(
+                            fontSize: 16.0, fontWeight: FontWeight.bold),
                       ),
-                      // SizedBox(height: 8.0),
-                      TextField(
+                      SizedBox(height: 8.0),
+                      CustomTextField(
                         controller: passwordController,
-                        obscureText: true,
-                        decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Color.fromARGB(255, 220, 207, 254),
-                          // border: OutlineInputBorder(
-                          //     borderRadius:
-                          //         BorderRadius.all(Radius.circular(30))),
-                          hintText: 'Enter your password',
-                        ),
+                        hintText: "Enter your password",
+                        hasAsterisks: true,
                       ),
                       SizedBox(
                         height: 30.0,
@@ -85,10 +88,12 @@ class _LoginState extends State<Login> {
                         child: GestureDetector(
                           onTap: () {
                             // Perform signup logic here
-                            print('UserName: ${userNameController.text}');
-                            print('Password: ${passwordController.text}');
-                            Navigator.pushReplacementNamed(
-                                context, '/category');
+                            String username = userNameController.text.trim();
+                            String password = passwordController.text.trim();
+
+                            validation(username, password);
+                            // Navigator.pushReplacementNamed(
+                            //     context, '/category');
                           },
                           child: Container(
                             width: 250,

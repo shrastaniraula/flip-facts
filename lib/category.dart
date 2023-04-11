@@ -1,4 +1,4 @@
-import 'package:flashcards/custom_drawer.dart';
+import 'package:flashcards/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';

@@ -6,7 +6,7 @@ import 'package:flashcards/flashcard_view.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 
-import 'add_card.dart';
+import '../add_card.dart';
 
 class CustomDrawer extends StatelessWidget {
   @override

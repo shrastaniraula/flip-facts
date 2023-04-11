@@ -1,3 +1,4 @@
+import 'package:flashcards/widgets/textfield.dart';
 import 'package:flutter/material.dart';
 
 class AddFlashcardPage extends StatefulWidget {
@@ -39,22 +40,24 @@ class _AddFlashcardPageState extends State<AddFlashcardPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                TextFormField(
-                  maxLines: null,
+                Text(
+                  'Card Title',
+                  style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 8.0),
+                CustomTextField(
                   controller: CardNameController,
-                  decoration: InputDecoration(labelText: 'Name'),
-                  // onChanged: (value) {
-                  //   setState(() {
-                  //     _name = value;
-                  //   });
-                  // },
+                  hintText: "Enter your Card title",
                 ),
                 SizedBox(height: 16.0),
-                TextFormField(
+                Text(
+                  'Card Description',
+                  style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 8.0),
+                CustomTextField(
                   controller: CardDescController,
-                  maxLines: null,
-                  decoration: InputDecoration(labelText: 'Description'),
-                
+                  hintText: "Enter your card description",
                 ),
                 SizedBox(height: 40.0),
                 Text('Categories', style: TextStyle(fontSize: 20.0)),

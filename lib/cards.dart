@@ -1,4 +1,4 @@
-import 'package:flashcards/custom_drawer.dart';
+import 'package:flashcards/widgets/custom_drawer.dart';
 import 'package:flashcards/flashcard.dart';
 import 'package:flashcards/flashcard_view.dart';
 import 'package:flip_card/flip_card.dart';
@@ -35,14 +35,6 @@ class _CardsState extends State<Cards> {
             "Welcome back",
             style: TextStyle(color: Color.fromARGB(255, 0, 0, 0)),
           ),
-          // actions: [
-          //   IconButton(
-          //       onPressed: () {
-          //         Navigator.pushReplacementNamed(context, '/');
-          //         print("Icon Pressed");
-          //       },
-          //       icon: const Icon(Icons.logout))
-          // ],
         ),
         drawer: CustomDrawer(),
         body: ListView(

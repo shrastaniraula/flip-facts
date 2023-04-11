@@ -1,10 +1,9 @@
-import 'package:flashcards/Signup.dart';
+import 'package:flashcards/signup.dart';
 import 'package:flashcards/cards.dart';
 import 'package:flashcards/category.dart';
 import 'package:flashcards/landing_page.dart';
 import 'package:flashcards/login.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'add_card.dart';
 
 void main() {
@@ -20,14 +19,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
-            primarySwatch: Colors.indigo,
-            fontFamily: GoogleFonts.poppins().fontFamily),
+          primarySwatch: Colors.indigo,
+          // fontFamily: GoogleFonts.poppins().fontFamily
+        ),
         home: Welcome(),
-        // initialRoute: '/category',
+        initialRoute: '/signup',
         routes: {
           '/signup': (context) => Signup(),
-          '/login': (context) => Login(),
           '/cards': (context) => Cards(),
+          '/login': (context) => Login(),
           '/category': (context) => Category(),
           '/addCards': (context) => AddFlashcardPage(),
         });

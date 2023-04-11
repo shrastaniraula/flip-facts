@@ -1,6 +1,11 @@
 class Flashcard {
-  final String? question;
-  final String? answer;
+  String? question;
+  String? answer;
+  String? date;
 
-  Flashcard({this.question, this.answer});
+  Flashcard(String question, String answer, String date) {
+    this.question = question;
+    this.answer = answer;
+    this.date = date;
+  }
 }
