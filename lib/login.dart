@@ -19,6 +19,7 @@ class _LoginState extends State<Login> {
   TextEditingController passwordController = TextEditingController();
 
   validation(String username, String password) {
+    // print("tapped");
     if (username.isEmpty || password.isEmpty) {
       Fluttertoast.showToast(msg: "Please fill all the fields!");
       return;
@@ -92,8 +93,6 @@ class _LoginState extends State<Login> {
                             String password = passwordController.text.trim();
 
                             validation(username, password);
-                            // Navigator.pushReplacementNamed(
-                            //     context, '/category');
                           },
                           child: Container(
                             width: 250,

@@ -32,18 +32,18 @@ class LoginSingup {
 
   signUp(
       String name, String email, String password, BuildContext context) async {
-    print(name);
-    print(email);
-    print(password);
+    // print(name);
+    // print(email);
+    // print(password);
     try {
       String serverUrl = "http://" + Ipaddress.ip + "/flashcards/signup.php";
-      print(serverUrl);
+      // print(serverUrl);
       Uri uri = Uri.parse(serverUrl);
       var data = {'name': name, 'email': email, 'password': password};
-      print(data);
+      // print(data);
       var response = await http.post(uri, body: data);
-      print(response.body);
-      print(response.statusCode);
+      // print(response.body);
+      // print(response.statusCode);
       if (response.statusCode == 200) {
         //going to login page
         print("going to login");
@@ -57,4 +57,3 @@ class LoginSingup {
     }
   }
 }
-// }

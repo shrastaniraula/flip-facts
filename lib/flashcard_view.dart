@@ -1,3 +1,4 @@
+import 'package:flashcards/update_delete.dart';
 import 'package:flutter/material.dart';
 
 class FlashcardView extends StatelessWidget {
@@ -42,7 +43,12 @@ class FlashcardView extends StatelessWidget {
                     style: TextStyle(fontSize: 20, color: Colors.grey),
                   ),
                   IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => UpdateDelete()));
+                      },
                       icon: Icon(
                         Icons.edit,
                         color: Colors.grey,

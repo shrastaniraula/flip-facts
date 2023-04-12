@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
           // fontFamily: GoogleFonts.poppins().fontFamily
         ),
         home: Welcome(),
-        initialRoute: '/signup',
+        initialRoute: '/login',
         routes: {
           '/signup': (context) => Signup(),
           '/cards': (context) => Cards(),

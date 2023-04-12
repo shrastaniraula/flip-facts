@@ -11,19 +11,46 @@ class Cards extends StatefulWidget {
 
 class _CardsState extends State<Cards> {
   List<Flashcard> _flashcards = [
-    Flashcard(
-        question: "What programming language does Flutter use?",
-        answer: "Dart"),
-    Flashcard(question: "Who you gonna call?", answer: "Ghostbusters!"),
-    Flashcard(
-        question: "Who teaches you how to write sexy code?",
-        answer: "Ya boi Kilo Loco!")
+    // Flashcard(
+    //     question: "What programming language does Flutter use?",
+    //     answer: "Dart"),
+    // Flashcard(question: "Who you gonna call?", answer: "Ghostbusters!"),
+    // Flashcard(
+    //     question: "Who teaches you how to write sexy code?",
+    //     answer: "Ya boi Kilo Loco!")
+  ];
+
+  var carddata = [
+    {'question': "How are you?", 'answer': "I am fine!"},
+    {'question': "Nepal?", 'answer': "IIC!"},
+    {'question': "What is the capital of Philipines?", 'answer': "Malai yaad xaina"},
+    {'question': "How are you?", 'answer': "I am fine!"},
+    {'question': "K garne??", 'answer': "Kaam"},
+    {'question': "How are you?", 'answer': "I am fine!"},
+    {'question': "How are you?", 'answer': "I am fine!"},
+    {'question': "How are you?", 'answer': "I am fine!"},
+    {'question': "How are you?", 'answer': "I am fine!"},
+    {'question': "How are you?", 'answer': "I am fine!"},
+    {'question': "How are you?", 'answer': "I am fine!"},
+    {
+      'question': "What is the full form of AI?",
+      'answer': "Artificial Intelligence"
+    }
   ];
 
   int _currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
+    for (int i = 0; i < carddata.length; i++) {
+      _flashcards.add(Flashcard(
+          question: carddata[i]['question']!, answer: carddata[i]['answer']!));
+      // _flashcards.add({question:carddata[i]['question']!,carddata[i]['answer']!})
+    }
+    // for (int i = 0; i < carddata.length; i++) {
+    //   Flashcard(
+    //       question: carddata[i]['question'], answer: carddata[i]['answer']);
+    // }
     return MaterialApp(
       home: Scaffold(
         // appBar: Title(color: Colors.transparent, child: Row()),

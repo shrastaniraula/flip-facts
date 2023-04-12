@@ -5,12 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
 
-class AddFlashcardPage extends StatefulWidget {
+class UpdateDelete extends StatefulWidget {
   @override
-  _AddFlashcardPageState createState() => _AddFlashcardPageState();
+  _UpdateDeleteState createState() => _UpdateDeleteState();
 }
 
-class _AddFlashcardPageState extends State<AddFlashcardPage> {
+class _UpdateDeleteState extends State<UpdateDelete> {
   String category = "";
   TextEditingController cardNameController = TextEditingController();
   TextEditingController cardDescController = TextEditingController();
@@ -110,26 +110,53 @@ class _AddFlashcardPageState extends State<AddFlashcardPage> {
                   ],
                 ),
                 SizedBox(height: 15.0),
-                GestureDetector(
-                  onTap: () {
-                    // Perform signup logic here
-                    String cardtitle = cardNameController.text;
-                    String carddescription = cardDescController.text;
-                    // print(category);
-                    validation(cardtitle, carddescription);
-                  },
-                  child: Container(
-                    width: 250,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50),
-                      color: Color.fromARGB(255, 79, 49, 162),
+                Center(
+                  child: GestureDetector(
+                    onTap: () {
+                      // Perform signup logic here
+                      String cardtitle = cardNameController.text;
+                      String carddescription = cardDescController.text;
+                      validation(cardtitle, carddescription);
+                    },
+                    child: Container(
+                      width: 250,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50),
+                        color: Color.fromARGB(255, 79, 49, 162),
+                      ),
+                      child: const Center(
+                          child: Text('Update Card',
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  color: Color.fromARGB(246, 255, 255, 255)))),
                     ),
-                    child: const Center(
-                        child: Text('Add Card',
-                            style: TextStyle(
-                                fontSize: 20,
-                                color: Color.fromARGB(246, 255, 255, 255)))),
+                  ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Center(
+                  child: GestureDetector(
+                    onTap: () {
+                      // Perform signup logic here
+                      String cardtitle = cardNameController.text;
+                      String carddescription = cardDescController.text;
+                      validation(cardtitle, carddescription);
+                    },
+                    child: Container(
+                      width: 250,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50),
+                        color: Color.fromARGB(255, 79, 49, 162),
+                      ),
+                      child: const Center(
+                          child: Text('Delete Card',
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  color: Color.fromARGB(246, 255, 255, 255)))),
+                    ),
                   ),
                 ),
               ],
