@@ -17,6 +17,7 @@ class Conn {
       'user_id': user_id
     };
     var response = await http.post(uri, body: data);
+    print(response.body);
     if (response.statusCode == 200) {
       Fluttertoast.showToast(msg: "Successfully send items");
       return;

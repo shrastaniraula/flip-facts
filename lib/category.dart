@@ -34,8 +34,11 @@ class _CategoryState extends State<Category> {
             itemBuilder: ((context, index) {
               return GestureDetector(
                 onTap: () {
-                  Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => Cards()));
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              Cards(category[index]['cat_name']!)));
                 },
                 child: Container(
                   height: 80,

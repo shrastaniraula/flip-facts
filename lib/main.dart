@@ -23,10 +23,11 @@ class MyApp extends StatelessWidget {
           // fontFamily: GoogleFonts.poppins().fontFamily
         ),
         home: Welcome(),
-        initialRoute: '/login',
+        initialRoute: '/category',
         routes: {
+          
           '/signup': (context) => Signup(),
-          '/cards': (context) => Cards(),
+          '/cards': (context) => Cards(""),
           '/login': (context) => Login(),
           '/category': (context) => Category(),
           '/addCards': (context) => AddFlashcardPage(),

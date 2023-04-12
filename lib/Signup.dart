@@ -27,12 +27,12 @@ class _SignupState extends State<Signup> {
       Fluttertoast.showToast(msg: "Please fill all the fields!");
       return;
     }
-  
+
     if (password != confirm) {
       Fluttertoast.showToast(msg: "Password and confirm password must be same");
       return;
     }
-  if (confirm.length <= 8) {
+    if (confirm.length <= 8) {
       Fluttertoast.showToast(
           msg: "Password should contain atleast 8 characters!");
       return;
@@ -128,8 +128,6 @@ class _SignupState extends State<Signup> {
               ),
               GestureDetector(
                 onTap: () {
-                  // Fluttertoast.showToast(msg: "Tapped");
-                  // Perform signup logic here
                   String name = nameController.text.trim();
                   String email = emailController.text.trim();
                   String password = passwordController.text.trim();
@@ -138,12 +136,6 @@ class _SignupState extends State<Signup> {
 
                   validation(name, email, password, confirmPassword);
 
-                  // print('Name: ${nameController.text}');
-                  // print('Email: ${emailController.text}');
-                  // print('Password: ${passwordController.text}');
-                  // print('Confirm Password: ${confirmPasswordController.text}');
-                  // obj.signUp(name, email, password, context);
-                  // Navigator.pushReplacementNamed(context, '/login');
                 },
                 child: Container(
                   width: 250,
