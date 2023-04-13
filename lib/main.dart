@@ -1,3 +1,4 @@
+import 'package:flashcards/newcards.dart';
 import 'package:flashcards/signup.dart';
 import 'package:flashcards/cards.dart';
 import 'package:flashcards/category.dart';
@@ -25,12 +26,12 @@ class MyApp extends StatelessWidget {
         home: Welcome(),
         initialRoute: '/category',
         routes: {
-          
           '/signup': (context) => Signup(),
           '/cards': (context) => Cards(""),
           '/login': (context) => Login(),
           '/category': (context) => Category(),
           '/addCards': (context) => AddFlashcardPage(),
+          // '/ishantry': (context) => NewCards(),
         });
   }
 }
