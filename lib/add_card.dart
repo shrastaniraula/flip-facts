@@ -1,5 +1,6 @@
 import 'package:flashcards/category.dart';
 import 'package:flashcards/connection/add_cardConn.dart';
+import 'package:flashcards/login.dart';
 import 'package:flashcards/widgets/textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -17,7 +18,8 @@ class _AddFlashcardPageState extends State<AddFlashcardPage> {
 
   @override
   validation(String cardtitle, String carddescription) {
-    String user = "1";
+    String user = Login.name!;
+    
     if (cardtitle.isEmpty || carddescription.isEmpty || category.isEmpty) {
       Fluttertoast.showToast(msg: "Please fill the all fields!");
       return;

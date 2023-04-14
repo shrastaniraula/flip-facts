@@ -4,16 +4,26 @@ import 'package:flashcards/widgets/textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
+import 'package:velocity_x/velocity_x.dart';
 
 class UpdateDelete extends StatefulWidget {
+  String id;
+  String title;
+  String description;
+
+  UpdateDelete(this.id, this.title, this.description, {super.key});
   @override
-  _UpdateDeleteState createState() => _UpdateDeleteState();
+  State<UpdateDelete> createState() => _UpdateDeleteState();
 }
+// State<UpdateDelete> createState()=>_UpdateDeleteState();
 
 class _UpdateDeleteState extends State<UpdateDelete> {
+  // var id = "";
+  // var title = "";
+  // var description = "";
+  // _UpdateDeleteState(this.id, this.title, this.description);
+// String? id=widget.id;
   String category = "";
-  TextEditingController cardNameController = TextEditingController();
-  TextEditingController cardDescController = TextEditingController();
 
   @override
   validation(String cardtitle, String carddescription) {
@@ -27,6 +37,11 @@ class _UpdateDeleteState extends State<UpdateDelete> {
   }
 
   Widget build(BuildContext context) {
+    TextEditingController cardNameController =
+        TextEditingController(text: widget.title);
+    TextEditingController cardDescController =
+        TextEditingController(text: widget.description);
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,

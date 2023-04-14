@@ -3,8 +3,12 @@ import 'package:flutter/material.dart';
 
 class FlashcardView extends StatelessWidget {
   final String? text;
+  String? id;
+  String? title;
+  String? description;
 
-  FlashcardView({Key? key, this.text}) : super(key: key);
+  FlashcardView({Key? key, this.text, this.id, this.title, this.description})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,10 +48,22 @@ class FlashcardView extends StatelessWidget {
                   ),
                   IconButton(
                       onPressed: () {
+                        print("This is id");
+                        print(id);
+                        print("This is title");
+                        print(title);
+                        print("This is desc");
+                        print(description);
+                        print("sakiyo");
+
+                        // widget.carddata[_currentIndex]
+                        //                     ['card_id']
+
                         Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => UpdateDelete()));
+                                builder: (context) =>
+                                    UpdateDelete(id!, title!, description!)));
                       },
                       icon: Icon(
                         Icons.edit,

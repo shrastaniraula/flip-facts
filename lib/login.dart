@@ -8,6 +8,7 @@ import 'connection/login_signup.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
+  static String? name;
 
   @override
   State<Login> createState() => _LoginState();
@@ -91,6 +92,7 @@ class _LoginState extends State<Login> {
                             // Perform signup logic here
                             String username = userNameController.text.trim();
                             String password = passwordController.text.trim();
+                            Login.name = userNameController.text.trim();
 
                             validation(username, password);
                           },
