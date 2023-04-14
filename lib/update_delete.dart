@@ -1,5 +1,7 @@
 import 'package:flashcards/category.dart';
 import 'package:flashcards/connection/add_cardConn.dart';
+import 'package:flashcards/connection/update_delete.dart';
+import 'package:flashcards/login.dart';
 import 'package:flashcards/widgets/textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -13,28 +15,46 @@ class UpdateDelete extends StatefulWidget {
 
   UpdateDelete(this.id, this.title, this.description, {super.key});
   @override
-  State<UpdateDelete> createState() => _UpdateDeleteState();
+  State<UpdateDelete> createState() =>
+      _UpdateDeleteState(id, title, description);
 }
 // State<UpdateDelete> createState()=>_UpdateDeleteState();
 
 class _UpdateDeleteState extends State<UpdateDelete> {
-  // var id = "";
-  // var title = "";
-  // var description = "";
-  // _UpdateDeleteState(this.id, this.title, this.description);
-// String? id=widget.id;
-  String category = "";
+  _UpdateDeleteState(this.id, this.title, this.description);
+  var id;
+  var title;
+  var description;
 
   @override
-  validation(String cardtitle, String carddescription) {
-    String user = "1";
-    if (cardtitle.isEmpty || carddescription.isEmpty || category.isEmpty) {
+  updvalidation(String cardtitle, String carddescription) {
+    print("checckkkkkk");
+    print(this.id);
+    print("checckkkkkk");
+
+    String? user = Login.name;
+    if (cardtitle.isEmpty || carddescription.isEmpty) {
       Fluttertoast.showToast(msg: "Please fill the all fields!");
       return;
     }
-    Conn conObj = new Conn();
-    conObj.submitForm(cardtitle, carddescription, category, user);
+    UpdateConn upObj = new UpdateConn();
+    upObj.update(cardtitle, carddescription, id, context);
   }
+
+  delvalidation(String cardtitle, String carddescription) {
+    print("checckkkkkk");
+    print(this.id);
+    print("checckkkkkk");
+
+    String? user = Login.name;
+    if (cardtitle.isEmpty || carddescription.isEmpty) {
+      Fluttertoast.showToast(msg: "Please fill the all fields!");
+      return;
+    }
+    UpdateConn upObj = new UpdateConn();
+    upObj.delete(cardtitle, carddescription, id, context);
+  }
+  
 
   Widget build(BuildContext context) {
     TextEditingController cardNameController =
@@ -90,40 +110,6 @@ class _UpdateDeleteState extends State<UpdateDelete> {
                 SizedBox(
                   height: 30,
                 ),
-                Column(
-                  children: [
-                    RadioListTile(
-                      title: Text("Study"),
-                      value: "Study",
-                      groupValue: category,
-                      onChanged: (value) {
-                        setState(() {
-                          category = value.toString();
-                        });
-                      },
-                    ),
-                    RadioListTile(
-                      title: Text("Miscellenious"),
-                      value: "Miscellenious",
-                      groupValue: category,
-                      onChanged: (value) {
-                        setState(() {
-                          category = value.toString();
-                        });
-                      },
-                    ),
-                    RadioListTile(
-                      title: Text("Personal"),
-                      value: "Personal",
-                      groupValue: category,
-                      onChanged: (value) {
-                        setState(() {
-                          category = value.toString();
-                        });
-                      },
-                    )
-                  ],
-                ),
                 SizedBox(height: 15.0),
                 Center(
                   child: GestureDetector(
@@ -131,7 +117,7 @@ class _UpdateDeleteState extends State<UpdateDelete> {
                       // Perform signup logic here
                       String cardtitle = cardNameController.text;
                       String carddescription = cardDescController.text;
-                      validation(cardtitle, carddescription);
+                      updvalidation(cardtitle, carddescription);
                     },
                     child: Container(
                       width: 250,
@@ -157,7 +143,7 @@ class _UpdateDeleteState extends State<UpdateDelete> {
                       // Perform signup logic here
                       String cardtitle = cardNameController.text;
                       String carddescription = cardDescController.text;
-                      validation(cardtitle, carddescription);
+                      delvalidation(cardtitle, carddescription);
                     },
                     child: Container(
                       width: 250,
